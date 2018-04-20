@@ -30,9 +30,14 @@ public class CriteriaFemale implements Criteria{
                 }
             });
         }catch (NullPointerException e){
-            throw new FailedCriteriaException("Failed Female Criteria, Registerd driver attribute data is missing.");
+            throw new FailedCriteriaException("Failed Female Criteria, Registered driver has missing some data.");
         }
 
         return femaleDrivers;
+    }
+
+    @Override
+    public String toString() {
+        return "Criteria Female";
     }
 }
