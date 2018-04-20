@@ -1,6 +1,7 @@
 package com.design.pattern.filterpattern;
 
 import com.design.pattern.filterpattern.criterias.CriteriaFemale;
+import com.design.pattern.filterpattern.criterias.CriteriaMale;
 import com.design.pattern.filterpattern.util.Gender;
 import com.design.pattern.filterpattern.util.MaritalStatus;
 import org.springframework.boot.SpringApplication;
@@ -33,7 +34,12 @@ public class FilterPatternApplication {
         Criteria femaleCriteria = new CriteriaFemale();
         List<Driver> femaleDrivers = femaleCriteria.meetCriteria(drivers);
         System.out.println("Total Female Drivers : "+femaleDrivers.size());
-        System.out.println("Total Female Drivers : "+femaleDrivers.toString());
+        System.out.println("Female Drivers : "+femaleDrivers.toString());
+
+        Criteria maleCriteria = new CriteriaMale();
+        List<Driver> maleDrivers = maleCriteria.meetCriteria(drivers);
+        System.out.println("Total Male Drivers : "+maleDrivers.size());
+        System.out.println("Male Drivers : "+maleDrivers.toString());
 
 
 	}
