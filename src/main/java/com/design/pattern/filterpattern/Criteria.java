@@ -5,5 +5,10 @@ import java.util.List;
 
 public interface Criteria {
 
-    public List<Driver> meetCriteria(List<Driver> drivers);
+    /**
+     *
+     * @param drivers
+     * @return fitlerd list of drivers that match the criteria.
+     */
+     List<Driver> meetCriteria(List<Driver> drivers);
 }

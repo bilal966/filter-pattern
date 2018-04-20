@@ -1,17 +1,40 @@
 package com.design.pattern.filterpattern;
 
+import com.design.pattern.filterpattern.criterias.CriteriaFemale;
 import com.design.pattern.filterpattern.util.Gender;
+import com.design.pattern.filterpattern.util.MaritalStatus;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author muhammad bilal
+ * @email bilal.hobnail@gmail.com
+ */
 @SpringBootApplication
 public class FilterPatternApplication {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(FilterPatternApplication.class, args);
 		System.out.println("Starting Spring-Boot Application: Filter Design Pattern...!");
-		Driver driverBilal = Driver.builder().setName("Bilal").setAge(20).setGender(Gender.MALE.name()).build();
-        Driver driverJhon = Driver.builder().setName("Jhon").setAge(20).setGender(Gender.MALE.name()).build();
-        Driver driverSmith = Driver.builder().setName("Smith").setAge(20).setGender(Gender.MALE.name()).build();
+
+		List<Driver> drivers = new ArrayList<>();
+
+		drivers.add(Driver.builder().setName("Bilal").setAge(20).setGender(Gender.MALE.name()).build());
+		drivers.add(Driver.builder().setName("Jhon").setAge(20).setGender(Gender.MALE.name()).build());
+        drivers.add(Driver.builder().setName("Smith").setAge(20).setGender(Gender.MALE.name()).build());
+        drivers.add(Driver.builder().setName("Nina").setAge(20).setGender(Gender.FEMALE.name()).setMaritalStatus(MaritalStatus.MARRIED.name()).build());
+
+        System.out.println("Total Drivers Pool : "+drivers.size());
+
+        Criteria femaleCriteria = new CriteriaFemale();
+        List<Driver> femaleDrivers = femaleCriteria.meetCriteria(drivers);
+        System.out.println("Total Female Drivers : "+femaleDrivers.size());
+        System.out.println("Total Female Drivers : "+femaleDrivers.toString());
+
+
 	}
 }
