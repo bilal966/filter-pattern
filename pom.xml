@@ -9,7 +9,12 @@
 	<packaging>jar</packaging>
 
 	<name>filter-pattern</name>
-	<description>Design Pattern project for Spring Boot</description>
+	<description>Fiter design pattern implementation.</description>
+	<url>https://github.com/bilal966/filter-pattern</url>
+	<developers>
+		<developer><name>Bilal</name><email>bilal.hobnail@gmail.com</email></developer>
+	</developers>
+	<organization><name>xGeek</name><url>http://xgeek.us</url></organization>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
